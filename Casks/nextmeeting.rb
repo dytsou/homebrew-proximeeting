@@ -1,6 +1,6 @@
 cask "nextmeeting" do
-  version "1.3.2"
-  sha256 "75efd0435f9a4586d545ab5d215b57fc606962fa66115c216ba03e5f1ffd9b30"
+  version "1.3.3"
+  sha256 "117c14996b61fdd8bfd7930f3e8c9356459558802ef047c637c7f5902189cf09"
 
   url "https://github.com/dytsou/NextMeeting/releases/download/v#{version}/NextMeeting.zip"
   name "NextMeeting"
