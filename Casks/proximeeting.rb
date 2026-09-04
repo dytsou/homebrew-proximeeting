@@ -7,7 +7,7 @@ cask "proximeeting" do
   desc "Menu bar app that shows your next calendar meeting"
   homepage "https://github.com/dytsou/ProxiMeeting"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "ProxiMeeting.app"
 
