@@ -11,6 +11,9 @@ cask "proximeeting" do
 
   app "ProxiMeeting.app"
 
+  # Quit on uninstall/upgrade so Homebrew can reopen the new binary (`open -b`).
+  uninstall quit: "com.proximeeting.app"
+
   livecheck do
     url "https://github.com/dytsou/ProxiMeeting/releases/latest"
     strategy :github_latest

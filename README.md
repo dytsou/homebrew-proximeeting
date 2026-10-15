@@ -17,6 +17,8 @@ Requires **macOS 13 Ventura** or later.
 brew upgrade --cask proximeeting
 ```
 
+If ProxiMeeting is running, Homebrew quits it during the upgrade and reopens the new build (`uninstall quit:`). Pass `brew upgrade --no-quit` (or set `HOMEBREW_NO_UPGRADE_QUIT_CASKS=1`) to leave the running app alone.
+
 ## Maintainer: version bumps
 
 **Automated (default):** When [ProxiMeeting's `build.yml`](https://github.com/dytsou/ProxiMeeting/blob/main/.github/workflows/build.yml) creates a new GitHub Release, it also updates this repo's [`Casks/proximeeting.rb`](Casks/proximeeting.rb) (`version` + `sha256`) and pushes to `main`. GitHub only allows **one deploy key per repository**, so the workflow uses a **second** key pair: store the private key in the ProxiMeeting repo secret **`TAP_DEPLOY_KEY`**, and add the matching **public** key here under **Settings → Deploy keys** with **Allow write access** (read-only keys cannot `git push`). CI uses `GIT_SSH_COMMAND` with that key so it is not confused with **`DEPLOY_KEY`** (ProxiMeeting). If push fails with "denied to deploy key", confirm this key is added **here** (not only on ProxiMeeting) and that **write access** is enabled.
