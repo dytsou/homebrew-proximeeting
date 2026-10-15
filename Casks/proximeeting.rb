@@ -1,6 +1,6 @@
 cask "proximeeting" do
   version "2.2.2"
-  sha256 "770940a66137df5838265382bc528ac985c412245719bbec0057d2310c62802f"
+  sha256 "01b8896ff0ac1cd236fa34766ee00710bec95d6d2081eee0e50f64879c2086b5"
 
   url "https://github.com/dytsou/ProxiMeeting/releases/download/v#{version}/ProxiMeeting.zip"
   name "ProxiMeeting"
