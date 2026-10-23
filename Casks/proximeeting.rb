@@ -7,27 +7,17 @@ cask "proximeeting" do
   desc "Menu bar app that shows your next calendar meeting"
   homepage "https://github.com/dytsou/ProxiMeeting"
 
-  depends_on macos: :ventura
-
-  app "ProxiMeeting.app"
-
-  # Quit on uninstall/upgrade so the .app can be replaced cleanly.
-  uninstall quit: "com.proximeeting.app"
-
-  # brew upgrade reopens with `open -b` + unsetenv_others; brew reinstall never
-  # reopens. postflight_steps `run open` is sandboxed and hits kLSUnknownErr for
-  # GUI launches — use legacy postflight (full user env) so the LSUIElement app
-  # actually comes back after quit.
-  postflight do
-    system_command "/usr/bin/open", args: ["#{appdir}/ProxiMeeting.app"]
-  end
-
   livecheck do
     url "https://github.com/dytsou/ProxiMeeting/releases/latest"
     strategy :github_latest
   end
 
-  zap trash: [
-    "~/Library/Preferences/com.proximeeting.app.plist",
-  ]
+  depends_on macos: :ventura
+
+  app "ProxiMeeting.app"
+
+  # Quit on uninstall/upgrade; Homebrew reopens via open -b after upgrade.
+  uninstall quit: "com.proximeeting.app"
+
+  zap trash: "~/Library/Preferences/com.proximeeting.app.plist"
 end
