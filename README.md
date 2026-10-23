@@ -17,7 +17,7 @@ Requires **macOS 13 Ventura** or later.
 brew upgrade --cask proximeeting
 ```
 
-If ProxiMeeting is running, Homebrew quits it during the upgrade (`uninstall quit:`) and the cask `postflight` opens the new build. Pass `brew upgrade --no-quit` (or set `HOMEBREW_NO_UPGRADE_QUIT_CASKS=1`) to leave the running app alone (postflight may still activate/open the app).
+If ProxiMeeting is running, Homebrew quits it during the upgrade and reopens the new build (`uninstall quit:`). Pass `brew upgrade --no-quit` (or set `HOMEBREW_NO_UPGRADE_QUIT_CASKS=1`) to leave the running app alone.
 
 ## Maintainer: version bumps
 
